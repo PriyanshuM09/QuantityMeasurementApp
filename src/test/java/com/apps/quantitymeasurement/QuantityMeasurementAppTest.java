@@ -9,10 +9,10 @@ public class QuantityMeasurementAppTest {
 
     @Test
     void testFeetEquality_SameValue() {
-        Feet f1 = new Feet(1.0);
-        Feet f2 = new Feet(1.0);
+        Feet feet1 = new Feet(1.0);
+        Feet feet2 = new Feet(1.0);
 
-        assertTrue(f1.equals(f2), "1.0 ft should be equal to 1.0 ft");
+        assertTrue(feet1.equals(feet2), "1.0 ft should be equal to 1.0 ft");
     }
 
     @Test
