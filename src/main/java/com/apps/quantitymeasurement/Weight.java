@@ -1,4 +1,5 @@
 package com.apps.quantitymeasurement;
+
 public class Weight {
 
 	private final double value;

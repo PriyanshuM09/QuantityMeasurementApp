@@ -1,4 +1,5 @@
 package com.apps.quantitymeasurement;
+
 import java.util.Objects;
 
 public class Quantity<U extends IMeasurable> {
