@@ -165,4 +165,18 @@ public class QuantityMeasurementAppTest {
         assertTrue(QuantityMeasurementApp.demonstrateLengthEquality(sumLength, expectedLength));
     }
     
+    
+    @Test
+    public void addFeetAndInchesWithTargetUnitInches() {
+        Length length1 = new Length(1.0, Length.LengthUnit.FEET);
+        Length length2 = new Length(12.0, Length.LengthUnit.INCHES);
+
+        Length sum = QuantityMeasurementApp.demonstrateLengthAddition(
+                length1, length2, Length.LengthUnit.INCHES);
+
+        Length expected = new Length(24.0, Length.LengthUnit.INCHES);
+
+        assertTrue(QuantityMeasurementApp.demonstrateLengthEquality(sum, expected));
+    }
+    
 }

@@ -80,7 +80,33 @@ public class Length {
 
         return new Length(resultValue, this.unit);
     }
+    
+    
+    public Length add(Length length, LengthUnit targetUnit) {
+        if (length == null) {
+            throw new IllegalArgumentException("Length to add cannot be null");
+        }
+        if (targetUnit == null) {
+            throw new IllegalArgumentException("Target unit cannot be null");
+        }
+        return addAndConvert(length, targetUnit);
+    }
 
+    
+    private Length addAndConvert(Length length, LengthUnit targetUnit) {
+        // convert both to base unit (inches)
+        double thisInInches = this.unit.toInches(this.value);
+        double thatInInches = length.unit.toInches(length.value);
+
+        double sumInInches = thisInInches + thatInInches;
+
+        // convert base inches to target unit
+        double resultValue = targetUnit.fromInches(sumInInches);
+
+        return new Length(resultValue, targetUnit);
+    }
+    
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
