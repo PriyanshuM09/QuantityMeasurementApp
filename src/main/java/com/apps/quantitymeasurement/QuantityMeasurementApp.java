@@ -4,38 +4,43 @@ import com.apps.quantitymeasurement.Length.LengthUnit;
 
 public class QuantityMeasurementApp {
 
+    // UC1–UC4: Equality
     public static boolean demonstrateLengthEquality(Length l1, Length l2) {
         return l1.equals(l2);
     }
 
     public static boolean demonstrateLengthComparison(double v1, LengthUnit u1,
                                                       double v2, LengthUnit u2) {
-        Length l1 = new Length(v1, u1);
-        Length l2 = new Length(v2, u2);
-        return demonstrateLengthEquality(l1, l2);
+        return demonstrateLengthEquality(new Length(v1, u1), new Length(v2, u2));
     }
 
-    // Overload 1: raw values
+    // UC5: Conversion (overloaded)
     public static double demonstrateLengthConversion(double value,
                                                      LengthUnit fromUnit,
                                                      LengthUnit toUnit) {
         return Length.convert(value, fromUnit, toUnit);
     }
 
-    // Overload 2: instance method
-    public static Length demonstrateLengthConversion(Length length,
-                                                     LengthUnit toUnit) {
+    public static Length demonstrateLengthConversion(Length length, LengthUnit toUnit) {
         return length.convertTo(toUnit);
     }
 
+    // UC6: Addition
+    public static Length demonstrateLengthAddition(Length length1, Length length2) {
+        return length1.add(length2);
+    }
+
     public static void main(String[] args) {
-        System.out.println("convert(1.0, FEET, INCHES) = "
-                + demonstrateLengthConversion(1.0, LengthUnit.FEET, LengthUnit.INCHES));
+        System.out.println("1 ft == 12 in ? " +
+                demonstrateLengthComparison(1.0, LengthUnit.FEET, 12.0, LengthUnit.INCHES));
 
-        System.out.println("convert(3.0, YARDS, FEET) = "
-                + demonstrateLengthConversion(3.0, LengthUnit.YARDS, LengthUnit.FEET));
+        System.out.println("convert(3 yards -> feet) = " +
+                demonstrateLengthConversion(3.0, LengthUnit.YARDS, LengthUnit.FEET));
 
-        System.out.println("convert(36.0, INCHES, YARDS) = "
-                + demonstrateLengthConversion(36.0, LengthUnit.INCHES, LengthUnit.YARDS));
+        Length sum = demonstrateLengthAddition(
+                new Length(1.0, LengthUnit.FEET),
+                new Length(12.0, LengthUnit.INCHES)
+        );
+        System.out.println("1 ft + 12 in = " + sum);
     }
 }

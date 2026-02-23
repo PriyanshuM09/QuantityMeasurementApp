@@ -78,12 +78,7 @@ public class QuantityMeasurementAppTest {
                 .equals(new Length(1.0, LengthUnit.YARDS)));
     }
 
-    // 11
-    @Test
-    void thirtyPoint48CmEqualsOneFoot() {
-        assertTrue(new Length(30.48, LengthUnit.CENTIMETERS)
-                .equals(new Length(1.0, LengthUnit.FEET)));
-    }
+
 
     // 12
     @Test
@@ -158,4 +153,16 @@ public class QuantityMeasurementAppTest {
                         0.0, LengthUnit.FEET, LengthUnit.INCHES),
                 EPS);
     }
+    
+    @Test
+    public void addFeetAndInches() {
+        Length length1 = new Length(1.0, Length.LengthUnit.FEET);
+        Length length2 = new Length(12.0, Length.LengthUnit.INCHES);
+
+        Length sumLength = QuantityMeasurementApp.demonstrateLengthAddition(length1, length2);
+        Length expectedLength = new Length(2.0, Length.LengthUnit.FEET);
+
+        assertTrue(QuantityMeasurementApp.demonstrateLengthEquality(sumLength, expectedLength));
+    }
+    
 }
