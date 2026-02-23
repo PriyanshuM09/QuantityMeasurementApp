@@ -1,6 +1,41 @@
 package com.apps.quantitymeasurement;
 
 public class QuantityMeasurementApp {
+	
+	public static <U extends IMeasurable> Quantity<U> demonstrateSubtraction(
+	        Quantity<U> quantity1, Quantity<U> quantity2) {
+
+	    if (quantity1 == null || quantity2 == null) {
+	        throw new IllegalArgumentException("Quantities cannot be null");
+	    }
+
+	    return quantity1.subtract(quantity2);
+	}
+
+	public static <U extends IMeasurable> Quantity<U> demonstrateSubtraction(
+	        Quantity<U> quantity1, Quantity<U> quantity2, U targetUnit) {
+
+	    if (quantity1 == null || quantity2 == null) {
+	        throw new IllegalArgumentException("Quantities cannot be null");
+	    }
+	    if (targetUnit == null) {
+	        throw new IllegalArgumentException("Target unit cannot be null");
+	    }
+
+	    return quantity1.subtract(quantity2, targetUnit);
+	}
+
+	public static <U extends IMeasurable> double demonstrateDivision(
+	        Quantity<U> quantity1, Quantity<U> quantity2) {
+
+	    if (quantity1 == null || quantity2 == null) {
+	        throw new IllegalArgumentException("Quantities cannot be null");
+	    }
+
+	    return quantity1.divide(quantity2);
+	}
+	
+	
 
     public static void main(String[] args) {
 
@@ -43,5 +78,28 @@ public class QuantityMeasurementApp {
         System.out.println(v1.convertTo(VolumeUnit.MILLILITRE)); 
         System.out.println(v1.add(v2)); 
         System.out.println(v1.add(v3, VolumeUnit.MILLILITRE)); 
+        
+        
+        // Length examples
+        Quantity<LengthUnit> l1 = new Quantity<>(10.0, LengthUnit.FEET);
+        Quantity<LengthUnit> l2 = new Quantity<>(6.0, LengthUnit.INCHES);
+
+        System.out.println(demonstrateSubtraction(l1, l2)); 
+        System.out.println(demonstrateSubtraction(l1, l2, LengthUnit.INCHES));
+        System.out.println(demonstrateDivision(l1, new Quantity<>(2.0, LengthUnit.FEET)));
+
+        // Weight examples
+        Quantity<WeightUnit> w1 = new Quantity<>(10.0, WeightUnit.KILOGRAM);
+        Quantity<WeightUnit> w2 = new Quantity<>(5000.0, WeightUnit.GRAM);
+
+        System.out.println(demonstrateSubtraction(w1, w2));
+        System.out.println(demonstrateDivision(w1, new Quantity<>(5.0, WeightUnit.KILOGRAM)));
+
+        // Volume examples
+        Quantity<VolumeUnit> v4 = new Quantity<>(5.0, VolumeUnit.LITRE);
+        Quantity<VolumeUnit> v5 = new Quantity<>(500.0, VolumeUnit.MILLILITRE);
+
+        System.out.println(demonstrateSubtraction(v4, v5));
+        System.out.println(demonstrateDivision(v4, new Quantity<>(10.0, VolumeUnit.LITRE)));
     }
 }
