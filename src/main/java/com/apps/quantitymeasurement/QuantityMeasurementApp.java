@@ -1,33 +1,41 @@
 package com.apps.quantitymeasurement;
 
+import com.apps.quantitymeasurement.Length.LengthUnit;
+
 public class QuantityMeasurementApp {
 
-    public static boolean demonstrateLengthComparison(double v1, Length.LengthUnit u1,
-                                                      double v2, Length.LengthUnit u2) {
+    public static boolean demonstrateLengthEquality(Length l1, Length l2) {
+        return l1.equals(l2);
+    }
+
+    public static boolean demonstrateLengthComparison(double v1, LengthUnit u1,
+                                                      double v2, LengthUnit u2) {
         Length l1 = new Length(v1, u1);
         Length l2 = new Length(v2, u2);
+        return demonstrateLengthEquality(l1, l2);
+    }
 
-        boolean result = l1.equals(l2);
-        System.out.println("Input: " + l1 + " and " + l2);
-        System.out.println("Output: Equal (" + result + ")");
-        return result;
+    // Overload 1: raw values
+    public static double demonstrateLengthConversion(double value,
+                                                     LengthUnit fromUnit,
+                                                     LengthUnit toUnit) {
+        return Length.convert(value, fromUnit, toUnit);
+    }
+
+    // Overload 2: instance method
+    public static Length demonstrateLengthConversion(Length length,
+                                                     LengthUnit toUnit) {
+        return length.convertTo(toUnit);
     }
 
     public static void main(String[] args) {
+        System.out.println("convert(1.0, FEET, INCHES) = "
+                + demonstrateLengthConversion(1.0, LengthUnit.FEET, LengthUnit.INCHES));
 
-        // Feet to Inches
-        demonstrateLengthComparison(1.0, Length.LengthUnit.FEET, 12.0, Length.LengthUnit.INCHES);
+        System.out.println("convert(3.0, YARDS, FEET) = "
+                + demonstrateLengthConversion(3.0, LengthUnit.YARDS, LengthUnit.FEET));
 
-        // Yards to Feet
-        demonstrateLengthComparison(1.0, Length.LengthUnit.YARDS, 3.0, Length.LengthUnit.FEET);
-
-        // Yards to Inches
-        demonstrateLengthComparison(1.0, Length.LengthUnit.YARDS, 36.0, Length.LengthUnit.INCHES);
-
-        // Centimeters to Inches
-        demonstrateLengthComparison(1.0, Length.LengthUnit.CENTIMETERS, 0.393701, Length.LengthUnit.INCHES);
-
-        // Centimeters to Feet
-        demonstrateLengthComparison(30.48, Length.LengthUnit.CENTIMETERS, 1.0, Length.LengthUnit.FEET);
+        System.out.println("convert(36.0, INCHES, YARDS) = "
+                + demonstrateLengthConversion(36.0, LengthUnit.INCHES, LengthUnit.YARDS));
     }
 }
