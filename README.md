@@ -1,12 +1,12 @@
 # UC1 – Feet Measurement Equality
 
-## 📌 Description
+##  Description
 
 Implements equality comparison between two numerical values measured in feet using proper `equals()` method implementation.
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 Return:
 
@@ -15,7 +15,7 @@ Return:
 
 ---
 
-## 🛠 Implementation
+##  Implementation
 
 - Inner class `Feet`  
 - Encapsulated `private final double value`  
@@ -25,7 +25,7 @@ Return:
 
 ---
 
-## ✅ Example
+##  Example
 
 **Input:**  
 1.0 ft and 1.0 ft  
@@ -35,7 +35,7 @@ Equal: `true`
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - Equality Contract  
 - Floating-point comparison  
