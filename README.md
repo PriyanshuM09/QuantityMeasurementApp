@@ -1,6 +1,6 @@
 # UC3 – Generic Quantity Class (DRY Principle)
 
-## 📌 Description
+##  Description
 
 Refactors UC1 and UC2 by replacing separate Feet and Inches classes with a single generic `QuantityLength` class.
 
@@ -8,7 +8,7 @@ Eliminates code duplication and follows the **DRY (Don't Repeat Yourself)** prin
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 - Support equality comparison across units (Feet, Inches)  
 - Convert values to a common base unit (feet)  
@@ -16,7 +16,7 @@ Eliminates code duplication and follows the **DRY (Don't Repeat Yourself)** prin
 
 ---
 
-## 🛠 Implementation
+##  Implementation
 
 - `LengthUnit` enum with conversion factors  
 - `QuantityLength` class with:
@@ -28,7 +28,7 @@ Eliminates code duplication and follows the **DRY (Don't Repeat Yourself)** prin
 
 ---
 
-## ✅ Example
+##  Example
 
 **Input:**  
 Quantity(1.0, FEET) and Quantity(12.0, INCH)  
@@ -44,7 +44,7 @@ Equal: `true`
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - DRY Principle  
 - Enum Usage  
@@ -58,7 +58,7 @@ Equal: `true`
 
 ---
 
-## 🚀 Benefits Over UC1 & UC2
+##  Benefits Over UC1 & UC2
 
 - No duplicated code  
 - Centralized conversion logic  
