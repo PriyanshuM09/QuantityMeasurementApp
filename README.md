@@ -1,6 +1,6 @@
 # UC9 – Weight Measurement (Kilogram, Gram, Pound)
 
-## 📌 Description
+##  Description
 
 Extends the Quantity Measurement Application to support a new measurement category: **Weight**.
 
@@ -20,16 +20,16 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
-### 🔹 WeightUnit (Standalone Enum)
+###  WeightUnit (Standalone Enum)
 
 - Stores conversion factor relative to `KILOGRAM`  
 - `convertToBaseUnit(double)`  
 - `convertFromBaseUnit(double)`  
 - Immutable and thread-safe  
 
-### 🔹 QuantityWeight
+###  QuantityWeight
 
 - `private final double value`  
 - `private final WeightUnit unit`  
@@ -41,7 +41,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## ✅ Equality Examples
+##  Equality Examples
 
 - `Quantity(1.0, KILOGRAM).equals(Quantity(1000.0, GRAM))`  
   → `true`  
@@ -54,7 +54,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## 🔁 Conversion Examples
+##  Conversion Examples
 
 - `Quantity(1.0, KILOGRAM).convertTo(GRAM)`  
   → `Quantity(1000.0, GRAM)`  
@@ -67,7 +67,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## ➕ Addition Examples
+##  Addition Examples
 
 ### Implicit target unit
 
@@ -84,7 +84,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## 🛡 Validation Rules
+##  Validation Rules
 
 - Unit must not be null  
 - Value must be finite (no NaN / Infinity)  
@@ -93,7 +93,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - Multiple Measurement Categories  
 - Base Unit Normalization (Kilogram)  
@@ -108,7 +108,7 @@ Length (UC1–UC8) remains fully functional and independent.
 
 ---
 
-## 🏛 Architectural Impact
+##  Architectural Impact
 
 - No modification required in Length module  
 - Weight mirrors Length design (UC8 pattern)  
