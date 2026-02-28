@@ -1,12 +1,12 @@
 # UC2 – Feet and Inches Measurement Equality
 
-## 📌 Description
+##  Description
 
 Extends UC1 by adding equality comparison for Inches along with Feet. Both measurements are treated separately and compared independently.
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 Return:
 
@@ -16,7 +16,7 @@ Return:
 
 ---
 
-## 🛠 Implementation
+##  Implementation
 
 - Separate `Feet` and `Inches` classes  
 - Encapsulated `private final double value`  
@@ -27,7 +27,7 @@ Return:
 
 ---
 
-## ✅ Example
+##  Example
 
 **Input:**  
 1.0 inch and 1.0 inch  
@@ -43,7 +43,7 @@ Equal: `true`
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - Object Equality Contract  
 - Floating-point comparison  
@@ -54,7 +54,7 @@ Equal: `true`
 
 ---
 
-## ⚠️ Limitation
+##  Limitation
 
 Violates **DRY principle** since `Feet` and `Inches` classes contain duplicated logic.  
 A better design would use a **generic Quantity class** or **unit parameter** to reduce redundancy.
