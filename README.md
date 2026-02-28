@@ -128,5 +128,5 @@ new Quantity<>(-40.0, TemperatureUnit.CELSIUS)
   .equals(new Quantity<>(-40.0, TemperatureUnit.FAHRENHEIT)); // true
 ```
 
-**Code Link:** [UC-14 feature](https://github.com/Saud0786/QuantityMeasurementApp/tree/feature/UC14-TemperaturE-Measurement/src)
+**Code Link:** [UC-14 feature]()
   
