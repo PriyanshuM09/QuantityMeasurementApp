@@ -1,6 +1,6 @@
 # UC4 – Extended Unit Support
 
-## 📌 Description
+##  Description
 
 Extends UC3 by adding **YARDS** and **CENTIMETERS** to the generic `QuantityLength` class.
 
@@ -9,7 +9,7 @@ New units are added only in the `LengthUnit` enum without modifying the main cla
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 - Support equality across **FEET, INCHES, YARDS, and CENTIMETERS**  
 - Convert all values to a common base unit before comparison  
@@ -17,7 +17,7 @@ New units are added only in the `LengthUnit` enum without modifying the main cla
 
 ---
 
-## 🛠 Implementation
+##  Implementation
 
 - Updated `LengthUnit` enum:
   - `FEET`  
@@ -30,7 +30,7 @@ New units are added only in the `LengthUnit` enum without modifying the main cla
 
 ---
 
-## ✅ Example
+##  Example
 
 **Input:**  
 Quantity(1.0, YARDS) and Quantity(3.0, FEET)  
@@ -52,7 +52,7 @@ Equal: `true`
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - Scalability of Generic Design  
 - DRY Principle Validation  
@@ -64,7 +64,7 @@ Equal: `true`
 
 ---
 
-## 🌟 Benefits
+##  Benefits
 
 - No code duplication  
 - Easy addition of new units  
