@@ -1,6 +1,6 @@
 # UC6 – Addition of Two Length Units (Same Category)
 
-## 📌 Description
+##  Description
 
 Extends UC5 by introducing **addition operations between length measurements**.
 
@@ -10,7 +10,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 - Add two length measurements  
 - Normalize to base unit before arithmetic  
@@ -19,7 +19,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## ➕ Addition Logic
+##  Addition Logic
 
 - Validate both operands (non-null, finite values, valid units)  
 - Convert both values to base unit  
@@ -29,7 +29,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## ✅ Example
+## Example
 
 - `add(Quantity(1.0, FEET), Quantity(2.0, FEET))`  
   → `Quantity(3.0, FEET)`  
@@ -48,7 +48,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## ✨ Features
+##  Features
 
 - Cross-unit addition  
 - Same-unit addition  
@@ -61,7 +61,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## 🛡 Validation Rules
+##  Validation Rules
 
 - Null operands throw exception  
 - Null or invalid units throw `IllegalArgumentException`  
@@ -69,7 +69,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 - Arithmetic on Value Objects  
 - Immutability  
@@ -82,7 +82,7 @@ Example: `1 FEET + 12 INCHES = 2 FEET`
 
 ---
 
-## 🌟 Benefits
+##  Benefits
 
 - Reuses conversion logic from UC5  
 - No code duplication  
