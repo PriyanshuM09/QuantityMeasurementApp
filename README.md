@@ -1,6 +1,6 @@
 # UC5 – Unit-to-Unit Conversion (Same Measurement Type)
 
-## 📌 Description
+##  Description
 
 Extends UC4 by adding explicit **unit-to-unit conversion support**.
 
@@ -17,7 +17,7 @@ Supports conversion across:
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 - Convert between any supported length units  
 - Normalize to a base unit before conversion  
@@ -25,4 +25,4 @@ Supports conversion across:
 
 ---
 
-## 🔁 Conversion Formula
+##  Conversion Formula
