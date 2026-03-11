@@ -1,20 +1,20 @@
-package com.apps.quantitymeasurement;
+package com.apps.quantitymeasurement.core;
 
 import java.util.function.Function;
 
-enum TemperatureUnit implements IMeasurable {
+public enum TemperatureUnit implements IMeasurable {
 
     CELSIUS(
-            c -> c,                       // Celsius to Celsius (base)
-            c -> c                        // Celsius to Celsius
+            c -> c,
+            c -> c
     ),
     FAHRENHEIT(
-            f -> (f - 32) * 5 / 9,         // Fahrenheit to Celsius
-            c -> (c * 9 / 5) + 32          // Celsius to Fahrenheit
+            f -> (f - 32) * 5 / 9,
+            c -> (c * 9 / 5) + 32
     ),
     KELVIN(
-            k -> k - 273.15,               // Kelvin to Celsius
-            c -> c + 273.15                // Celsius to Kelvin
+            k -> k - 273.15,
+            c -> c + 273.15
     );
 
     private final Function<Double, Double> toCelsius;
@@ -22,13 +22,14 @@ enum TemperatureUnit implements IMeasurable {
 
     TemperatureUnit(Function<Double, Double> toCelsius,
                     Function<Double, Double> fromCelsius) {
+
         this.toCelsius = toCelsius;
         this.fromCelsius = fromCelsius;
     }
 
     @Override
     public double convertToBaseUnit(double value) {
-        return toCelsius.apply(value); // Base unit = Celsius
+        return toCelsius.apply(value);
     }
 
     @Override
@@ -38,11 +39,22 @@ enum TemperatureUnit implements IMeasurable {
 
     @Override
     public double getConversionFactor() {
-        return 1.0; // Not meaningful for temperature (non-linear), dummy value
+        return 1.0;
     }
 
     @Override
     public String getUnitName() {
-        return name(); // CELSIUS, FAHRENHEIT, KELVIN
+        return name();
+    }
+
+    @Override
+    public SupportsArithmetic supportsArithmetic() {
+        return () -> false;
+    }
+
+    @Override
+    public void validateOperationSupport(String operation) {
+        throw new UnsupportedOperationException(
+                "Temperature does not support arithmetic operations");
     }
 }
