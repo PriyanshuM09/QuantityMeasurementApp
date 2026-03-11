@@ -34,8 +34,7 @@ public class QuantityMeasurementApp {
 
 	    return quantity1.divide(quantity2);
 	}
-	
-	
+
 
     public static void main(String[] args) {
 
