@@ -1,0 +1,23 @@
+# Maven
+target/
+*.jar
+*.war
+
+# Logs
+*.log
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+
+# Node (if frontend later)
+node_modules/
